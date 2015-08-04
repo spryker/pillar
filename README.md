@@ -9,6 +9,5 @@ projects.
 > securely sent only to the relevant minion.
 
 ## Documentation
+ * Spryker [reference salstack](https://github.com/spryker/saltstack) repository
  * Official [pillar walkthrough](http://docs.saltstack.com/en/latest/topics/tutorials/pillar.html)
- * Spryker [refernece salstack](https://github.com/spryker/saltstack) repository
-
