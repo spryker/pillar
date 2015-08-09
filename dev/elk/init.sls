@@ -3,8 +3,11 @@
 # Please note that for ELK we are using a seperate Elasticsearch instance, not the instances used for catalog data
 
 elk:
-  elasticsearch:
+  # Enable ELK stack?
+  # It is not enabled by default, as the memory requirements should be tuned correctly
+  enabled: False
 
+  elasticsearch:
     # ES cluster name, should be different than catalog cluster(s)
     # Optional, default: spryker-elk-01
     clustername: spryker-elk-01
