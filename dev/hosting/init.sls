@@ -9,8 +9,8 @@ hosting:
   provider: vagrant
 
   # Country of debian mirror to use for installing packages
-  # Optional, default: de
-  debian_mirror: de
+  # Optional, default: cloudfront.debian.net
+  debian_mirror: ftp.de.debian.org
 
   # Network part of created MySQL users
   # Optional, default: %

@@ -1,5 +1,6 @@
 dev:
-  '*':
+  'G@environment:dev':
+    - match: compound
     - hosting
     - app
     - user
@@ -7,3 +8,4 @@ dev:
     - elk
     - postgresql
     - rabbitmq
+    - elasticsearch
