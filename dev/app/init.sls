@@ -50,8 +50,8 @@ php:
   # Default: xdebug is enabled only if role 'dev' is included
   # xhprof is disabled
   # Optional
-  #enable_xdebug: true
   #enable_xhprof: true
+  enable_xdebug: false
 
   # PHP OpCache.
   # Optional, default: enabled
