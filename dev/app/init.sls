@@ -137,6 +137,7 @@ environments:
             # List of hostnames for YVES NginX VHost.
             # Mandatory, default: no value
             - www.de.spryker.dev
+            - de.spryker.dev
 
         zed:
           # Hostname for ZED NginX VHost. Only one value is allowed.
