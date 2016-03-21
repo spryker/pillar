@@ -5,7 +5,6 @@ dev:
     - app
     - user
     - postfix
-    - elk
     - postgresql
     - rabbitmq
     - elasticsearch
