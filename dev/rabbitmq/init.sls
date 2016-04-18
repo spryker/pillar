@@ -1,6 +1,10 @@
-# RabbitMQ queue configuration 
+# RabbitMQ queue configuration
 
 rabbitmq:
+  # Enable RabbitMQ service?
+  # Optional, default: True
+  enabled: False
+
   # Parameters for administrator user for rabbitmq web GUI
   # If the section below is not specified, admin user for web interface will not be created
   # Optional, default: no value

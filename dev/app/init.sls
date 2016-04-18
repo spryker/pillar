@@ -27,16 +27,6 @@ autoupdate:
   # Optional, default: False
   rabbitmq: true
 
-elasticsearch:
-  # Elasticsearch major version.
-  # Optional, default: 1.4
-  version: 1.4
-
-logstash:
-  # Logstash major version.
-  # Optional, default: 1.4
-  version: 1.4
-
 # List of stores. Note, each store defined here should be configured within
 # each environment section (see below).
 # Mandatory, default: no value
@@ -47,15 +37,15 @@ stores:
 php:
   # PHP debugger / profiler. Enable only on local or QA environment, never
   # use them on production.
-  # Default: xdebug is enabled only if role 'dev' is included
-  # xhprof is disabled
-  # Optional
-  #enable_xhprof: true
+  # Optional, Default: xdebug and xhprof are not installed/enabled
+  install_xdebug: true
+  install_xhprof: true
   enable_xdebug: false
+  enable_xhprof: false
 
   # PHP OpCache.
   # Optional, default: enabled
-  #enable_opcache: true
+  enable_opcache: true
 
 # Newrelic credentials - leave empty for non-production setups
 newrelic:
