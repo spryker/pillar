@@ -13,7 +13,7 @@ autoupdate:
   nodejs: true
 
   # Optional, default: False
-  elasticsearch: true
+  elasticsearch: false
 
   # Optional, default: False
   php: true
@@ -25,7 +25,7 @@ autoupdate:
   postgresql: true
 
   # Optional, default: False
-  rabbitmq: true
+  rabbitmq: false
 
 # List of stores. Note, each store defined here should be configured within
 # each environment section (see below).
@@ -92,33 +92,8 @@ environments:
 
       # Hostname for local static files virtual host in nginx,
       # Required if enable_local_vhost is set to true, no default value
-      hostname: static.com.spryker.dev
+      hostname: '~^static\..+\.local$'
 
-    cloud:
-      enabled: false
-      # object_storage:
-      #   enabled: true
-      #   rackspace:
-      #     api_username: demoshop.cloudfiles
-      #     api_key: a..............................5
-      # cdn:
-      #   enabled: true
-      #   static_media:
-      #     DE:
-      #       http: http://static.de.spryker.dev
-      #       https: https://static.de.spryker.dev
-      #     # US:
-      #     #   http: http://static.com.spryker.dev
-      #     #   https: https://static.com.spryker.dev
-      #   static_assets:
-      #     DE:
-      #       http: http://static.de.spryker.dev
-      #       https: https://static.de.spryker.dev
-      #     # US:
-      #     #   http: http://static.com.spryker.dev
-      #     #   https: https://static.com.spryker.dev
-      #   delete_local_processed_images: true
-      #   delete_original_images: true
     stores:
       # List of stores and store-specific settings. Stores listed here has to be the same as configured above in "stores" key.
       DE:
@@ -126,57 +101,49 @@ environments:
           hostnames:
             # List of hostnames for YVES NginX VHost.
             # Mandatory, default: no value
-            - www.de.spryker.dev
-            - de.spryker.dev
-
+            - '~^www\.de\..+\.local$'
         zed:
           # Hostname for ZED NginX VHost. Only one value is allowed.
           # Mandatory, default: no value
-          hostname: zed.de.spryker.dev
+          hostname: '~^zed\.de\..+\.local$'
 
-          # Path to htpasswod file. Comment out to disable http auth.
+          # Path to htpasswd file. Comment out to disable http auth.
           # Optional, default: no value
           # htpasswd_file:
       # US:
       #   yves:
       #     hostnames:
-      #       - www.de.spryker.devcom
+      #       - '~^www\.us\..+\.local$'
       #   zed:
-      #     hostname: zed.de.spryker.devcom
+      #     hostname: '~^zed\.us\..+\.local$'
       #     # htpasswd_file:
-#  testing:
-#    database:
-#      zed:
-#        hostname: localhost
-#        username: testing
-#        password: mate20mg
-#    elasticsearch:
-#      heap_size: 384m
-#    redis:
-#      host: 127.0.0.1
-#      port: ''
-#    rabbitmq:
-#      password: mate20mg
-#    static:
-#      enable_local_vhost: true
-#      hostname: static.com.spryker.test
-#    cloud:
-#      enabled: false
-#    stores:
-#      DE:
-#        yves:
-#          hostnames:
-#            - www.de.spryker.test
-#        zed:
-#          hostname: zed.de.spryker.test
-#          #htpasswd_file:
-#      # US:
-#      #   yves:
-#      #     hostnames:
-#      #       - www.com.spryker.test
-#      #   zed:
-#      #     hostname: zed.spryker.test
-#      #     #htpasswd_file:
+  devtest:
+    code_symlink: /data/shop/development/current
+    database:
+      zed:
+        hostname: localhost
+        username: devtest
+        password: mate20mg
+    elasticsearch:
+      skip_instance_setup: true
+      heap_size: 384m
+    redis:
+      skip_instance_setup: true
+      host: 127.0.0.1
+      port: ''
+    rabbitmq:
+      password: mate20mg
+    static:
+      enable_local_vhost: true
+      hostname: '~^static-test\..+\.local$'
+    stores:
+      DE:
+        yves:
+          hostnames:
+            - '~^www-test\.de\..+\.local$'
+        zed:
+          hostname: '~^zed-test\.de\..+\.local$'
+
 
 # The key below is used for deployment - from deployment server user root must be able to log in to all other
 # servers as user root.
