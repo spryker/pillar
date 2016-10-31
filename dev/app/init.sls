@@ -35,13 +35,11 @@ stores:
 #  - US
 
 php:
-  # PHP debugger / profiler. Enable only on local or QA environment, never
+  # PHP debugger. Enable only on local or QA environment, never
   # use them on production.
-  # Optional, Default: xdebug and xhprof are not installed/enabled
+  # Optional, Default: xdebug is installed/enabled
   install_xdebug: true
-  install_xhprof: true
   enable_xdebug: false
-  enable_xhprof: false
 
   # PHP OpCache.
   # Optional, default: enabled
