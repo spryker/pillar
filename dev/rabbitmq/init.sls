@@ -3,7 +3,7 @@
 rabbitmq:
   # Enable RabbitMQ service?
   # Optional, default: True
-  enabled: False
+  enabled: True
 
   # Parameters for administrator user for rabbitmq web GUI
   # If the section below is not specified, admin user for web interface will not be created
