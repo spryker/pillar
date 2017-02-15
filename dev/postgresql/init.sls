@@ -21,3 +21,8 @@ postgresql:
 
   # Optional, default: 1024
   max_connections: 32
+
+  # Optional, if not present - additional admin account will not be created
+  superuser:
+    username: admin
+    password: mate20mg
