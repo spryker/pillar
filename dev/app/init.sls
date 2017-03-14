@@ -32,7 +32,8 @@ autoupdate:
 # Mandatory, default: no value
 stores:
   - DE
-#  - US
+  - US
+  - AT
 
 php:
   # PHP debugger. Enable only on local or QA environment, never
@@ -108,13 +109,21 @@ environments:
           # Path to htpasswd file. Comment out to disable http auth.
           # Optional, default: no value
           # htpasswd_file:
-      # US:
-      #   yves:
-      #     hostnames:
-      #       - '~^www\.us\..+\.local$'
-      #   zed:
-      #     hostname: '~^zed\.us\..+\.local$'
-      #     # htpasswd_file:
+      US:
+        yves:
+          hostnames:
+            - '~^www\.us\..+\.local$'
+        zed:
+          hostname: '~^zed\.us\..+\.local$'
+      AT:
+        yves:
+          hostnames:
+            - '~^www\.at\..+\.local$'
+        zed:
+          hostname: '~^zed\.at\..+\.local$'
+
+
+
   devtest:
     code_symlink: /data/shop/development/current
     database:
@@ -141,7 +150,18 @@ environments:
             - '~^www-test\.de\..+\.local$'
         zed:
           hostname: '~^zed-test\.de\..+\.local$'
-
+      US:
+        yves:
+          hostnames:
+            - '~^www-test\.us\..+\.local$'
+        zed:
+          hostname: '~^zed-test\.us\..+\.local$'
+      AT:
+        yves:
+          hostnames:
+            - '~^www-test\.at\..+\.local$'
+        zed:
+          hostname: '~^zed-test\.at\..+\.local$'
 
 # The key below is used for deployment - from deployment server user root must be able to log in to all other
 # servers as user root.
